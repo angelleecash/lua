@@ -27,11 +27,18 @@ function traverse(t)
     end
 end
 
-traverse(_G)
-a = 3
-traverse(_G)
---[[
-setfenv(1, _G)
-print(a)
+function mypackage(env)
+    local _ENV = env
+    local pac = {}
+    function pac.fun1()
+        print()
+    end
+    return pac 
+end
+print(_ENV.print)
+print(_G.print)
+env = {print=function() _ENV.print("i won't print") end}
+pac = mypackage(env)
 
-]]
+pac.fun1()
+
