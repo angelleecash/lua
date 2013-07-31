@@ -9,7 +9,7 @@ function setfield(f,v)
         end
     end
 end
-
+--[[
 setfield("t.x.y.z.q.w", 4)
 print(t)
 print(t.x)
@@ -18,4 +18,20 @@ print(t.x.y.z)
 print(t.x.y.z.q)
 print(t.x.y.z.q.w)
 --t.x.y = 3
+]]
+function traverse(t)
+    for k,v in pairs(t) do
+        if(type(v) ~= "table" and type(v) ~= "function") then
+            print(k .. ":" .. v)
+        end
+    end
+end
 
+traverse(_G)
+a = 3
+traverse(_G)
+--[[
+setfenv(1, _G)
+print(a)
+
+]]
