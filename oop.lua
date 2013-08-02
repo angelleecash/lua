@@ -57,7 +57,7 @@ function createClass(...)
         setmetatable(o, c)
         return o
     end
-    --c.__index = c
+    c.__index = c
     return c
 end
 
