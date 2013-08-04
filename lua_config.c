@@ -61,7 +61,9 @@ int main(int argc, char** argv)
 	lua_State* L = luaL_newstate();
 	luaL_openlibs(L);
 
-	luaL_loadfile(L, "./config.lua");
+	int k = luaL_loadfile(L, "./config.lua");
+	fprintf(stderr, "----------------------%d",k);
+
 	lua_pcall(L, 0, 0, 0);
 
 	lua_getglobal(L, "width");
