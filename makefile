@@ -36,6 +36,10 @@ closure: closure.o
 tuple:
 	$(CC) $(CFLAGS) $(INCLUDE) -fPIC --share -o tuple.so tuple.c 
 
+boolarray:
+	$(CC) $(CFLAGS) $(INCLUDE) -fPIC --share -o boolarray.so bool_array.c 
+
+
 
 c_stuff.o: c_stuff.c
 lua_call_c.o: lua_call_c.c
