@@ -33,6 +33,8 @@ string: string.o
 closure: closure.o
 	$(CC) $(CFLAGS) -o $@ $(LDFLAGS) closure.o $(LIBS) 
 
+tuple:
+	$(CC) $(CFLAGS) $(INCLUDE) -fPIC --share -o tuple.so tuple.c 
 
 
 c_stuff.o: c_stuff.c
@@ -43,4 +45,4 @@ string.o: string.c
 closure.o: closure.c
 
 clean:
-	rm -f *.o c_call_lua lua_config lua_call_c c_stuff string closure
+	rm -f *.o c_call_lua lua_config lua_call_c c_stuff string closure *.so
