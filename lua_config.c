@@ -71,20 +71,20 @@ int main(int argc, char** argv)
     lua_getglobal(L, "background");
 	stack_dump(L);
 
-	fprintf(stderr, "width=%d\n", lua_tointeger(L, -3));
-	fprintf(stderr, "height=%d\n", lua_tointeger(L, -2));
+	fprintf(stderr, "width=%ld\n", lua_tointeger(L, -3));
+	fprintf(stderr, "height=%ld\n", lua_tointeger(L, -2));
 
     get_table_field(L, "red");
 	stack_dump(L);
-	fprintf(stderr, "red=%d\n", lua_tointeger(L, -1));
+	fprintf(stderr, "red=%ld\n", lua_tointeger(L, -1));
 	lua_pop(L, 1);
 
 	get_table_field(L, "green");
-	fprintf(stderr, "green=%d\n", lua_tointeger(L, -1));
+	fprintf(stderr, "green=%ld\n", lua_tointeger(L, -1));
 	lua_pop(L, 1);
 
 	get_table_field(L, "blue");
-	fprintf(stderr, "blue=%d\n", lua_tointeger(L, -1));
+	fprintf(stderr, "blue=%ld\n", lua_tointeger(L, -1));
 	lua_pop(L, 1);
 
 	lua_getglobal(L, "fun");

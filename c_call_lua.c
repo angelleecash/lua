@@ -52,7 +52,6 @@ void stack_dump(lua_State* L)
 
 int main(int argc, char** argv)
 {
-	char buff[1024];
 	lua_State* L = luaL_newstate();
 	luaL_openlibs(L);
 
