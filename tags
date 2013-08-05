@@ -317,6 +317,7 @@ LUA_MINBUFFER	/home/chenliang/lua-5.2.2/src/llimits.h	150;"	d
 LUA_MINSTACK	/home/chenliang/lua-5.2.2/src/lua.h	93;"	d
 LUA_MSASMTRICK	/home/chenliang/lua-5.2.2/src/luaconf.h	503;"	d
 LUA_MULTRET	/home/chenliang/lua-5.2.2/src/lua.h	34;"	d
+LUA_MYLIBNAME	/home/chenliang/lua-5.2.2/src/lualib.h	44;"	d
 LUA_NANTRICK	/home/chenliang/lua-5.2.2/src/luaconf.h	505;"	d
 LUA_NANTRICK	/home/chenliang/lua-5.2.2/src/luaconf.h	514;"	d
 LUA_NBITS	/home/chenliang/lua-5.2.2/src/lbitlib.c	18;"	d	file:
@@ -1697,7 +1698,7 @@ lua_Writer	/home/chenliang/lua-5.2.2/src/lua.h	/^typedef int (*lua_Writer) (lua_
 lua_absindex	/home/chenliang/lua-5.2.2/src/lapi.c	/^LUA_API int lua_absindex (lua_State *L, int idx) {$/;"	f
 lua_arith	/home/chenliang/lua-5.2.2/src/lapi.c	/^LUA_API void lua_arith (lua_State *L, int op) {$/;"	f
 lua_assert	/home/chenliang/lua-5.2.2/src/llimits.h	66;"	d
-lua_assert	/home/chenliang/lua-5.2.2/src/lualib.h	51;"	d
+lua_assert	/home/chenliang/lua-5.2.2/src/lualib.h	53;"	d
 lua_atpanic	/home/chenliang/lua-5.2.2/src/lapi.c	/^LUA_API lua_CFunction lua_atpanic (lua_State *L, lua_CFunction panicf) {$/;"	f
 lua_c	/home/chenliang/lua-5.2.2/src/lua.c	13;"	d	file:
 lua_call	/home/chenliang/lua-5.2.2/src/lua.h	253;"	d
