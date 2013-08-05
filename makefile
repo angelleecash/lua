@@ -27,10 +27,20 @@ lua_call_c: lua_call_c.o
 c_stuff: c_stuff.o
 	$(CC) $(CFLAGS) -o $@ $(LDFLAGS) c_stuff.o $(LIBS) 
 
+string: string.o
+	$(CC) $(CFLAGS) -o $@ $(LDFLAGS) string.o $(LIBS) 
+
+closure: closure.o
+	$(CC) $(CFLAGS) -o $@ $(LDFLAGS) closure.o $(LIBS) 
+
+
+
 c_stuff.o: c_stuff.c
 lua_call_c.o: lua_call_c.c
 lua_config.o: lua_config.c
 c_call_lua.o: c_call_lua.c
+string.o: string.c
+closure.o: closure.c
 
 clean:
-	rm -f *.o c_call_lua lua_config lua_call_c c_stuff
+	rm -f *.o c_call_lua lua_config lua_call_c c_stuff string closure
