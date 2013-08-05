@@ -1,4 +1,6 @@
 *.swp
+.*.swp
 *.o
 *.a
 a.out
+*.so
