@@ -37,7 +37,7 @@ tuple:
 	$(CC) $(CFLAGS) $(INCLUDE) -fPIC --share -o tuple.so tuple.c 
 
 boolarray:
-	$(CC) $(CFLAGS) $(INCLUDE) -fPIC --share -o boolarray.so bool_array.c 
+	$(CC) $(CFLAGS) $(INCLUDE) -fPIC --share -o boolarray.so boolarray.c 
 
 
 
