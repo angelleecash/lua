@@ -39,6 +39,11 @@ tuple:
 boolarray:
 	$(CC) $(CFLAGS) $(INCLUDE) -fPIC --share -o boolarray.so boolarray.c 
 
+dir:
+	$(CC) $(CFLAGS) $(INCLUDE) -fPIC --share -o dir.so dir.c 
+
+
+
 
 
 c_stuff.o: c_stuff.c
