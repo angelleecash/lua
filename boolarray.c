@@ -159,19 +159,29 @@ static const struct luaL_Reg boolarray_lib_member_fun[] = {
 													{NULL, NULL}
 												};
 
+static const struct luaL_Reg boolarray_lib_member_fun2[] = {
+													{"__newindex", setarray},
+													{"__index", getarray},
+													{"__len", getarraysize},
+													{NULL, NULL}
+												};
+
 int luaopen_boolarray(lua_State* L)
 {
 	STACK_DUMP();
 
 	luaL_newmetatable(L, METATABLE);
 	STACK_DUMP();
-
+	/*
 	lua_pushvalue(L, -1);
 	lua_setfield(L, -2, "__index");
     STACK_DUMP();
 	luaL_register(L, NULL, boolarray_lib_member_fun);
 	STACK_DUMP();
-	
+	*/
+	luaL_register(L, NULL, boolarray_lib_member_fun2);
+
+
 	luaL_register(L, "boolarray", boolarray_lib);
 	return 1;
 }
