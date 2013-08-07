@@ -1,5 +1,5 @@
 CC = gcc
-INCLUDE = -I ~/lua-5.2.2/src/
+INCLUDE = -I ~/lua-5.2.2/src/ -I ~/expat/lib
 CFLAGS = -std=c99 -Wall -g $(SYSCFLAGS) $(MYCFLAGS) $(INCLUDE)
 LDFLAGS = $(SYSLDFLAGS) $(MYLDFLAGS)
 LIBS = -lm -ldl $(SYSLIBS) $(MYLIBS)
@@ -7,7 +7,11 @@ LIBS = -lm -ldl $(SYSLIBS) $(MYLIBS)
 SYSCFLAGS =
 MYCFLAGS = 
 
-SYSLIBS = ~/lua-5.2.2/src/liblua.a
+EXPAT_LIB = ~/expat/.libs/libexpat.a
+EXPAT_SO = ~/expat/.libs/libexpat.so
+
+
+SYSLIBS = ~/lua-5.2.2/src/liblua.a 
 MYLIBS = 
 
 SYSLDFLAGS = 
@@ -42,9 +46,8 @@ boolarray:
 dir:
 	$(CC) $(CFLAGS) $(INCLUDE) -fPIC --share -o dir.so dir.c 
 
-
-
-
+xml:
+	$(CC) $(CFLAGS) $(INCLUDE) -fPIC --share -o xml.so xml.c $(EXPAT_SO)
 
 c_stuff.o: c_stuff.c
 lua_call_c.o: lua_call_c.c
@@ -52,6 +55,8 @@ lua_config.o: lua_config.c
 c_call_lua.o: c_call_lua.c
 string.o: string.c
 closure.o: closure.c
+
+
 
 clean:
 	rm -f *.o c_call_lua lua_config lua_call_c c_stuff string closure *.so

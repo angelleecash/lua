@@ -97,6 +97,7 @@ static int dir(lua_State* L)
 
 static int dir_gc(lua_State* L)
 {
+	P("GARBAGE COLLECTING DIR");
 	DIR* d = * (DIR**) lua_touserdata(L, -1);
 	if(d)
 	{
