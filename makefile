@@ -37,6 +37,9 @@ string: string.o
 closure: closure.o
 	$(CC) $(CFLAGS) -o $@ $(LDFLAGS) closure.o $(LIBS) 
 
+thread: thread.o
+	$(CC) $(CFLAGS) -o $@ $(LDFLAGS) thread.o $(LIBS) 
+
 tuple:
 	$(CC) $(CFLAGS) $(INCLUDE) -fPIC --share -o tuple.so tuple.c 
 
@@ -49,12 +52,16 @@ dir:
 xml:
 	$(CC) $(CFLAGS) $(INCLUDE) -fPIC --share -o xml.so xml.c $(EXPAT_SO)
 
+proc:
+	$(CC) $(CFLAGS) $(INCLUDE) -pthread -fPIC --share -o proc.so proc.c 
+
 c_stuff.o: c_stuff.c
 lua_call_c.o: lua_call_c.c
 lua_config.o: lua_config.c
 c_call_lua.o: c_call_lua.c
 string.o: string.c
 closure.o: closure.c
+thread.o: thread.c
 
 
 

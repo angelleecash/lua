@@ -10,7 +10,7 @@
 #include "lapi.h"
 #include "expat.h"
 
-#define VERBOSE 0
+#define VERBOSE 1
 #define EMPTY printf("%s", "")
 
 #define STACK_DUMP() (VERBOSE ? (stack_dump(L)) : (EMPTY))
